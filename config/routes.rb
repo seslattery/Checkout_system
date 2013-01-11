@@ -1,6 +1,12 @@
 CheckoutSystem::Application.routes.draw do
+
+  #get "items/new"
+
+  #get "items/new"
+  resources :items
+
   root to: 'static_pages#home' 
-  match '/checkout', to: 'static_pages#checkout'
+  match '/checkout', to: 'items#new'
 
 
   # The priority is based upon order of creation:
