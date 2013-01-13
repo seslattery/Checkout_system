@@ -6,6 +6,7 @@ CheckoutSystem::Application.routes.draw do
   resources :items
 
   root to: 'static_pages#home' 
+  match '/show', to: 'items#show'
   match '/checkout', to: 'items#new'
 
 
