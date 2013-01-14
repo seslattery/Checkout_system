@@ -1,0 +1,24 @@
+<% provide(:title, 'All') %>
+<h1>Items Out</h1>
+
+ <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th> ChemID </th>
+      <th> Date Checked Out </th>
+      <th> Date Returned </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Item.all.each do |item| %>
+     <tr>
+       <td><%= item.name %></td>
+       <td><%= item.chemID %></td>
+       <td><%= item.created_at %></td>
+       <td><%= item.updated_at %></td>
+       <td><%= link_to "delete", item, method: :delete, data: { confirm: "You sure?" } %></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
