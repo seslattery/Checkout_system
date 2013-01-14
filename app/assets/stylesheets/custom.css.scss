@@ -61,6 +61,14 @@ p {
   line-height: 1.7em;
 }
 .hero-unit {
+  h1{
+  color: $white;
+  font-size: 3em;
+  letter-spacing: -2px;
+  }
+  h4{
+  color: $white;
+  }
   background: #b70101;
   height: 180px;
   top: 42px;

@@ -11,12 +11,12 @@
     </tr>
   </thead>
   <tbody>
-    <% Item.all.each do |item| %>
+    <% Item.all.sort.reverse.each do |item| %>
     <% if(!item.returned) %>
     <tr>
       <td><%= item.name %></td>
       <td><%= item.chemID %></td>
-      <td><%= item.created_at %></td>
+      <td><%= item.created_at.to_s.split(' ').shift %></td>
       <td><%=link_to "Return", return_path(item)%></td>
     </tr>
     <% end %>

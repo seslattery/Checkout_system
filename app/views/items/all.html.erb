@@ -1,5 +1,5 @@
 <% provide(:title, 'All') %>
-<h1>Items Out</h1>
+<h1>Reports</h1>
 
  <table class="table table-bordered table-striped">
   <thead>
@@ -11,12 +11,16 @@
     </tr>
   </thead>
   <tbody>
-    <% Item.all.each do |item| %>
+    <% Item.all.sort.reverse.each do |item| %>
      <tr>
        <td><%= item.name %></td>
        <td><%= item.chemID %></td>
-       <td><%= item.created_at %></td>
-       <td><%= item.updated_at %></td>
+       <td><%= item.created_at.to_s.split(' ').shift %></td>
+       <% if(item.created_at==item.updated_at) %>
+       <td> Not Returned </td>
+       <% else %>
+       <td><%= item.updated_at.to_s.split(' ').shift %></td>
+       <% end %>
        <td><%= link_to "delete", item, method: :delete, data: { confirm: "You sure?" } %></td>
      </tr>
     <% end %>
