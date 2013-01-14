@@ -3,6 +3,8 @@ CheckoutSystem::Application.routes.draw do
   #get "items/new"
 
   #get "items/new"
+  match '/all', to: 'items#all'
+  match '/return', to: 'items#return'
   resources :items
 
   root to: 'static_pages#home' 
