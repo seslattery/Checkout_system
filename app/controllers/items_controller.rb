@@ -42,3 +42,8 @@ class ItemsController < ApplicationController
   #def new
   #end
 end
+#  background-image:url(assets/crissXcross.png); 
+  #width:100%; 
+  #height:auto;
+#
+#
